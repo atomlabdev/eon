@@ -42,6 +42,17 @@ export const EPISODES = gql`
   }
 `;
 
+export const EPISODE = gql`
+  query GetEpisode($id: ID!) {
+    episode(id: $id) {
+      id
+      name
+      air_date
+      episode
+    }
+  }
+`;
+
 export const LOCATIONS = gql`
   query GetLocations {
     locations {
@@ -49,6 +60,17 @@ export const LOCATIONS = gql`
         id
         name
       }
+    }
+  }
+`;
+
+export const LOCATION = gql`
+  query GetLocation($id: ID!) {
+    location(id: $id) {
+      id
+      name
+      type
+      dimension
     }
   }
 `;

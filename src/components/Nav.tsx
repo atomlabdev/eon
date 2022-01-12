@@ -1,34 +1,42 @@
 import React from "react";
 import { Page } from "../App";
+import NavLink from "./NavLink";
 
 interface NavProps {
   changePage: (newPage: Page) => void;
+  currentPage: Page;
 }
 
-const Nav = ({ changePage }: NavProps) => {
+const Nav = ({ changePage, currentPage }: NavProps) => {
   return (
     <header className="header">
       <nav className="nav">
         <ul>
           <li>
-            <button
-              className="nav-btn"
-              onClick={() => changePage("characters")}
+            <NavLink
+              onSelect={() => changePage("characters")}
+              isActive={currentPage === "characters"}
             >
               Characters
-            </button>
+            </NavLink>
           </li>
 
           <li>
-            <button onClick={() => changePage("episodes")} className="nav-btn">
+            <NavLink
+              onSelect={() => changePage("episodes")}
+              isActive={currentPage === "episodes"}
+            >
               Episodes
-            </button>
+            </NavLink>
           </li>
 
           <li>
-            <button onClick={() => changePage("locations")} className="nav-btn">
+            <NavLink
+              onSelect={() => changePage("locations")}
+              isActive={currentPage === "locations"}
+            >
               Locations
-            </button>
+            </NavLink>
           </li>
         </ul>
       </nav>

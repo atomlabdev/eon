@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="container">
       <div id="modal" />
-      <Nav changePage={changePage} />
+      <Nav changePage={changePage} currentPage={currentPage} />
       <main className="main">
         <CurrentView currentPage={currentPage} />
       </main>

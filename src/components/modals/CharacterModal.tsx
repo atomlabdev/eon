@@ -14,10 +14,6 @@ const CharacterModal = ({ result }: CharacterModalProps) => {
     variables: { id: result.id },
   });
 
-  useEffect(() => {
-    console.log("data uodated", data);
-  }, [data]);
-
   if (error) {
     return <Error />;
   }
