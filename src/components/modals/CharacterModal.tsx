@@ -28,31 +28,32 @@ const CharacterModal = ({ result }: CharacterModalProps) => {
 
   return (
     <>
-      <h1>{result.name}</h1>
+      {data?.character?.image && (
+        <img
+          src={data.character.image}
+          alt={result.name}
+          className="image-rounded"
+        />
+      )}
 
-      <dl>
+      <dl className="modal-data">
         <dt>Status</dt>
-        <dd>{data?.character?.status}</dd>
-      </dl>
+        <dd>{data?.character?.status || "N/A"}</dd>
 
-      <dl>
         <dt>Species</dt>
-        <dd>{data?.character?.species}</dd>
-      </dl>
+        <dd>{data?.character?.species || "N/A"}</dd>
 
-      <dl>
         <dt>Type</dt>
-        <dd>{data?.character?.type}</dd>
-      </dl>
+        <dd>{data?.character?.type || "N/A"}</dd>
 
-      <dl>
         <dt>Gender</dt>
-        <dd>{data?.character?.gender}</dd>
-      </dl>
+        <dd>{data?.character?.gender || "N/A"}</dd>
 
-      <dl>
         <dt>Origin</dt>
-        <dd>{data?.character?.origin?.name}</dd>
+        <dd>{data?.character?.origin?.name || "N/A"}</dd>
+
+        <dt>Location</dt>
+        <dd>{data?.character?.location?.name || "N/A"}</dd>
       </dl>
     </>
   );

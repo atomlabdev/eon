@@ -4,16 +4,18 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 
 interface ModalProps {
   onClose: () => void;
+  title: string;
   children: JSX.Element;
 }
 
-const Modal = ({ onClose, children }: ModalProps) => {
+const Modal = ({ onClose, title, children }: ModalProps) => {
   return ReactDOM.createPortal(
     <div className="modal-container">
       <div className="modal-content">
         <header className="modal-header">
-          <button onClick={onClose}>
-            <IoIosCloseCircleOutline />
+          <h1>{title}</h1>
+          <button className="btn-reset" onClick={onClose}>
+            <IoIosCloseCircleOutline size={24} />
           </button>
         </header>
         <div className="modal-body">{children}</div>

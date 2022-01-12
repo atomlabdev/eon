@@ -23,6 +23,10 @@ export const CHARACTER = gql`
       origin {
         name
       }
+      location {
+        name
+      }
+      image
     }
   }
 `;

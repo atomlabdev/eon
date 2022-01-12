@@ -13,6 +13,10 @@ export interface Character {
   origin: {
     name: string;
   }
+  location: {
+    name: string;
+  }
+  image: string;
 }
 
 export interface CharacterResult {

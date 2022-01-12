@@ -14,7 +14,10 @@ const Characters = () => {
   return (
     <>
       {selectedCharacter && (
-        <Modal onClose={() => setSelectedCharacter(null)}>
+        <Modal
+          title={selectedCharacter.name}
+          onClose={() => setSelectedCharacter(null)}
+        >
           <CharacterModal result={selectedCharacter} />
         </Modal>
       )}
