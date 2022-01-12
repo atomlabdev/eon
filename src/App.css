@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+body {
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: stretch;
+  min-height: 100vh;
+  background-color: #282c34;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.loader {
+  width: 120px;
+  height: 120px;
+  background-color: red;
+  animation: loading infinite 2.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.loader-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.loader-container h2 {
+  margin-bottom: 3rem;
+}
+
+.nav {
+  padding: 0.75rem 0.5rem;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.main {
+  flex: 1;
+  padding: 0 0.75rem;
+}
+
+.results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.result {
+  display: block;
+  width: 100%;
+  background: #f5f5f5;
+  border: none;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: 0.3s;
+}
+
+.result:hover {
+  background: #f3e8ff;
+  cursor: pointer;
+}
+
+.modal-container {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #f5f5f5;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: #333;
+}
+
+@media screen and (min-width: 800px) {
+  .results {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  to {
+}
+
+@keyframes loading {
+  0% {
+    background-color: red;
+  }
+  50% {
     transform: rotate(360deg);
+    background-color: orange;
+  }
+  100% {
+    transform: rotate(720deg);
+    background-color: red;
   }
 }

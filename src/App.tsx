@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Nav from "./components/Nav";
+import Characters from "./views/Characters";
+import Episodes from "./views/Episodes";
+import Locations from "./views/Locations";
+
+export type Page = "characters" | "locations" | "episodes";
+
+const CurrentView = ({ currentPage }: { currentPage: Page }) => {
+  if (currentPage === "locations") return <Locations />;
+  if (currentPage === "episodes") return <Episodes />;
+  return <Characters />;
+};
 
 function App() {
+  const [currentPage, setCurrentPage] = useState<Page>("characters");
+
+  const changePage = (newPage: Page) => setCurrentPage(newPage);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div id="modal" />
+      <Nav changePage={changePage} />
+      <main className="main">
+        <CurrentView currentPage={currentPage} />
+      </main>
     </div>
   );
 }
