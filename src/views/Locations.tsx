@@ -7,6 +7,7 @@ const Episodes = () => {
   const { loading, error, data } = useQuery(LOCATIONS);
   return (
     <ResultsList
+      onSelect={(character) => console.log("select item", character)}
       loading={loading}
       error={error}
       results={data && data.locations && data.locations.results}

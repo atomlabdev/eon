@@ -11,6 +11,22 @@ export const CHARACTERS = gql`
   }
 `;
 
+export const CHARACTER = gql`
+  query GetCharacter($id: ID!) {
+    character(id: $id) {
+      id
+      name
+      status
+      species
+      type
+      gender
+      origin {
+        name
+      }
+    }
+  }
+`;
+
 export const EPISODES = gql`
   query GetEpisodes {
     episodes {
