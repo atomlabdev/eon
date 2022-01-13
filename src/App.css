@@ -14,7 +14,7 @@ body {
 .loader {
   width: 120px;
   height: 120px;
-  background-color: red;
+  background-color: #06b6d4;
   animation: loading infinite 2.5s;
 }
 
@@ -28,6 +28,29 @@ body {
 
 .loader-container h2 {
   margin-bottom: 3rem;
+}
+
+.error {
+  background: #ef4444;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.error-title {
+  margin-top: 0;
+  font-size: 1.125rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.error-icon {
+  margin-right: 0.25rem;
+}
+
+.error-message {
+  margin-bottom: 0;
 }
 
 .header {
@@ -76,7 +99,7 @@ body {
 
 .main {
   flex: 1;
-  padding: 0.75rem;
+  padding: 1rem;
   overflow: scroll;
 }
 
@@ -87,7 +110,8 @@ body {
 }
 
 .result {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
   background: #f5f5f5;
   border: none;
@@ -97,6 +121,7 @@ body {
   border-radius: 0.25rem;
   transition: 0.3s;
   text-align: left;
+  padding: 0 1rem;
 }
 
 .result:hover {
@@ -111,20 +136,45 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem;
+  padding: 2rem;
+  display: flex;
 }
 
 .modal-content {
   background: #f5f5f5;
   border-radius: 0.5rem;
-  padding: 0.5rem;
   color: #333;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 4rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.modal-body {
+  padding: 1rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: scroll;
 }
 
 .modal-data dt {
@@ -136,15 +186,15 @@ body {
   margin: 0 0 1rem;
 }
 
-.image-rounded {
-  border-radius: 1rem;
-}
-
 .btn-reset {
   background: transparent;
   border: none;
   padding: 0;
   margin: 0;
+}
+
+.sr-only {
+  margin-left: -9999px;
 }
 
 @media screen and (min-width: 540px) {
@@ -163,18 +213,27 @@ body {
   .results {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .modal-body {
+    flex-direction: row;
+  }
+
+  .modal-image {
+    max-width: 400px;
+    margin-right: 1.5rem;
+  }
 }
 
 @keyframes loading {
   0% {
-    background-color: red;
+    background-color: #06b6d4;
   }
   50% {
     transform: rotate(360deg);
-    background-color: orange;
+    background-color: #10b981;
   }
   100% {
     transform: rotate(720deg);
-    background-color: red;
+    background-color: #06b6d4;
   }
 }

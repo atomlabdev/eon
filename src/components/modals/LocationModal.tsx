@@ -15,7 +15,7 @@ const LocationModal = ({ result }: LocationModalProps) => {
   });
 
   if (error) {
-    return <Error />;
+    return <Error error={error} />;
   }
 
   if (loading) {

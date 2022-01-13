@@ -15,7 +15,7 @@ const CharacterModal = ({ result }: EpisodeModalProps) => {
   });
 
   if (error) {
-    return <Error />;
+    return <Error error={error} />;
   }
 
   if (loading) {

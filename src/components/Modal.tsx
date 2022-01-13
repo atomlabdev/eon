@@ -11,9 +11,15 @@ interface ModalProps {
 const Modal = ({ onClose, title, children }: ModalProps) => {
   return ReactDOM.createPortal(
     <div className="modal-container">
-      <div className="modal-content">
+      <div
+        className="modal-content"
+        role="dialog"
+        aria-labelledby="dialog-label"
+      >
         <header className="modal-header">
-          <h1>{title}</h1>
+          <h1 id="dialog-label" className="modal-title">
+            {title}
+          </h1>
           <button className="btn-reset" onClick={onClose}>
             <IoIosCloseCircleOutline size={24} />
           </button>

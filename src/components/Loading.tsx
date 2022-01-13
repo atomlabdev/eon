@@ -3,7 +3,9 @@ import React from "react";
 const Loading = () => {
   return (
     <div className="loader-container">
-      <h2>Loading...</h2>
+      <p className="sr-only" role="alert" aria-busy="true">
+        Loading
+      </p>
       <div className="loader" />
     </div>
   );

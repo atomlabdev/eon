@@ -15,7 +15,7 @@ const CharacterModal = ({ result }: CharacterModalProps) => {
   });
 
   if (error) {
-    return <Error />;
+    return <Error error={error} />;
   }
 
   if (loading) {
@@ -28,7 +28,7 @@ const CharacterModal = ({ result }: CharacterModalProps) => {
         <img
           src={data.character.image}
           alt={result.name}
-          className="image-rounded"
+          className="modal-image"
         />
       )}
 

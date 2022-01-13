@@ -10,7 +10,7 @@ interface NavProps {
 const Nav = ({ changePage, currentPage }: NavProps) => {
   return (
     <header className="header">
-      <nav className="nav">
+      <nav className="nav" role="navigation">
         <ul>
           <li>
             <NavLink
